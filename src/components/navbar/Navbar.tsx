@@ -11,11 +11,26 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      borderBottom: 'solid',
+      borderBottomColor: '#e0e0e0',
+      borderBottomWidth: '1px',
+    },
+    flex: {
+      flexGrow: 1
     },
     linkSpacing: {
       '& > * + *':{
       marginLeft: theme.spacing(2)
       }
+    },
+    appBar: {
+      boxShadow: 'none',
+      backgroundColor: 'white',
+
+    },
+    logo: {
+      height:'120px',
+      width: '140px',
     },
   }),
 );
@@ -25,11 +40,10 @@ export default function DenseAppBar() {
   const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
   return (
     <div className={classes.root}>
-      <AppBar position="static" color='inherit'>
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-        <img style={{height:'120px',
-      width: '140px'}} src={logo} alt="Logo" />
-      <div className={classes.root}/>
+        <img className={classes.logo} src={logo} alt="Logo" />
+      <div className={classes.flex}/>
           <Typography variant="h6" color="textPrimary" className={classes.linkSpacing}>
             <Link href="#" onClick={preventDefault} color="inherit">
               Overview
