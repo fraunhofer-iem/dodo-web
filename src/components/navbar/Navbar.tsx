@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -156,13 +156,12 @@ const NavbarLink: React.FC<LinkProps> = (props) => {
   const preventDefault = (event: React.SyntheticEvent) =>
     event.preventDefault();
 
-
   return (
     <Link
       href="#"
       underline="none"
       className={props.active ? classes.linkActive : classes.link}
-      onClick={preventDefault}
+
     >
        {props.children}
     </Link>
@@ -170,31 +169,31 @@ const NavbarLink: React.FC<LinkProps> = (props) => {
 };
 
 interface Props {
-  setRef: (el: HTMLElement | null) => void
+  setRef?: (el: HTMLElement | null) => void;
 }
 
-export default function Navbar(props: Props) {
+const  NavBar: React.FC<Props>  = (props)=> {
   const classes = useStyles();
 
-  const [activeLink, setActiveLink] = useState('#')
+  const [activeLink, setActiveLink] = useState("#");
   useEffect(() => {
     window.onscroll = (ev: Event) => {
       //console.log("scrolling");
       //console.log(window.scrollX, window.scrollY);
-      if(window.scrollY > 20) {
+      if (window.scrollY > 20) {
         //console.log('updating link')
         setActiveLink(resultsSection);
       }
     };
   }, [setActiveLink]);
 
-  const topSection = '#';
-  const aboutSection = '#about';
-  const resultsSection = '#results';
-  const teamSection = '#team';
-  const partnersSection = '#partners';
+  const topSection = "#";
+  const aboutSection = "#about";
+  const resultsSection = "#results";
+  const teamSection = "#team";
+  const partnersSection = "#partners";
   return (
-    <div ref={props.setRef} className={classes.root}>
+    <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography
@@ -202,15 +201,33 @@ export default function Navbar(props: Props) {
             color="textPrimary"
             className={classes.linkSpacing}
           >
-            <NavbarLink active={false} href="#">DoDo</NavbarLink>
-            <NavbarLink active={activeLink === aboutSection} href="#about">About</NavbarLink>
-            <NavbarLink active={activeLink === resultsSection} href="#results">Results</NavbarLink>
-            <NavbarLink active={activeLink === teamSection} href="#team">Team</NavbarLink>
-            <NavbarLink active={activeLink === partnersSection} href="#partners">Partners</NavbarLink>
+            <NavbarLink active={false} href="#">
+              DoDo
+            </NavbarLink>
+            <NavbarLink active={activeLink === aboutSection} href="#about">
+              About
+            </NavbarLink>
+            <NavbarLink active={activeLink === resultsSection} href="#results">
+              Results
+            </NavbarLink>
+            <NavbarLink active={activeLink === teamSection} href="#team">
+              Team
+            </NavbarLink>
+            <NavbarLink
+              active={activeLink === partnersSection}
+              href="#partners"
+            >
+              Partners
+            </NavbarLink>
             <Button variant="contained">Tool Preview</Button>
           </Typography>
         </Toolbar>
       </AppBar>
+      <div >
+        {props.children}
+      </div>
     </div>
   );
-}
+};
+
+export default NavBar;

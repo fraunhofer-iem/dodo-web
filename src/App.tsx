@@ -1,6 +1,6 @@
 import { orange } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import React from "react";
+import React, { useRef, useState } from "react";
 
 import NavBar from "./components/navbar/Navbar";
 import Overview from "./components/overview/Overview";
@@ -46,31 +46,32 @@ function App() {
   ) => {
     console.log("intersection detected");
     console.log(entries);
+    // entries[0].target.getAttribute(href)
   };
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
-
-  const observer = new IntersectionObserver(callback, options);
 
   const setRef = (el: HTMLElement | null) => {
-    if (el !== null) {
-      console.log("received ref");
-      console.log(el);
+    if (el !== null && observer !== undefined) {
       observer.observe(el);
     }
   };
 
+  const root = React.createRef<HTMLDivElement>();
+  const options = {
+    root: root.current,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+  const observer = new IntersectionObserver(callback, options);
 
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <NavBar />
-        <Section setRef={setRef} title={"Hello World"}></Section>
-        <Section setRef={setRef} title={"Next"}></Section>
-        <Section setRef={setRef} title={"WhoopWhoop"}></Section>
+        <div ref={root}>
+          <Section setRef={setRef} title={"Hello World"}></Section>
+          <Section setRef={setRef} title={"Next"}></Section>
+          <Section setRef={setRef} title={"WhoopWhoop"}></Section>
+        </div>
       </ThemeProvider>
     </React.Fragment>
   );
