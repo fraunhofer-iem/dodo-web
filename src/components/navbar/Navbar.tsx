@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -153,9 +152,6 @@ interface LinkProps {
 const NavbarLink: React.FC<LinkProps> = (props) => {
   const classes = useStyles();
 
-  const preventDefault = (event: React.SyntheticEvent) =>
-    event.preventDefault();
-
   return (
     <Link
       href={props.href}
@@ -167,24 +163,10 @@ const NavbarLink: React.FC<LinkProps> = (props) => {
   );
 };
 
-interface Props {
-  setRef?: (el: HTMLElement | null) => void;
-}
-
-const  NavBar: React.FC<Props>  = (props)=> {
+const NavBar = () => {
   const classes = useStyles();
-
-  const [activeLink, setActiveLink] = useState("#");
-  useEffect(() => {
-    window.onscroll = (ev: Event) => {
-      //console.log("scrolling");
-      //console.log(window.scrollX, window.scrollY);
-      if (window.scrollY > 20) {
-        //console.log('updating link')
-        setActiveLink(resultsSection);
-      }
-    };
-  }, [setActiveLink]);
+  // ToDo: read this from mobx state
+  const [activeLink, setActiveLink] = useState("#about");
 
   const topSection = "#";
   const aboutSection = "#about";
@@ -222,9 +204,6 @@ const  NavBar: React.FC<Props>  = (props)=> {
           </Typography>
         </Toolbar>
       </AppBar>
-      <div >
-        {props.children}
-      </div>
     </div>
   );
 };
