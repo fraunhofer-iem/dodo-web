@@ -158,10 +158,9 @@ const NavbarLink: React.FC<LinkProps> = (props) => {
 
   return (
     <Link
-      href="#"
+      href={props.href}
       underline="none"
       className={props.active ? classes.linkActive : classes.link}
-
     >
        {props.children}
     </Link>

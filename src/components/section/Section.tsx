@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({}));
 
 interface Props {
   setRef: (el: HTMLElement | null) => void;
+  href: string;
   title: string;
 }
 
@@ -12,7 +13,7 @@ export default function Section(props: Props) {
   const classes = useStyles();
 
   return (
-    <section ref={props.setRef}>
+    <section id={props.href} ref={props.setRef}>
       <h1>{props.title}</h1>
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur

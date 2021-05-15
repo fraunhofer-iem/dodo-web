@@ -68,9 +68,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <NavBar />
         <div ref={root}>
-          <Section setRef={setRef} title={"Hello World"}></Section>
-          <Section setRef={setRef} title={"Next"}></Section>
-          <Section setRef={setRef} title={"WhoopWhoop"}></Section>
+          <Section href={"about"} setRef={setRef} title={"Hello World"}></Section>
+          <Section href={"results"}  setRef={setRef} title={"Next"}></Section>
+          <Section href={"team"} setRef={setRef} title={"WhoopWhoop"}></Section>
+          <Section href={"partners"} setRef={setRef} title={"WhoopWhoop"}></Section>
         </div>
       </ThemeProvider>
     </React.Fragment>
