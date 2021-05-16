@@ -1,9 +1,9 @@
-import CssBaseline from "@material-ui/core/CssBaseline";
 import {
+  CssBaseline,
   createMuiTheme,
   responsiveFontSizes,
   ThemeProvider,
-} from "@material-ui/core/styles";
+} from "@material-ui/core";
 import React from "react";
 import Content from "./components/content/Content";
 
