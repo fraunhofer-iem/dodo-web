@@ -1,3 +1,4 @@
+import { Box, Container, Toolbar } from "@material-ui/core";
 import React, { useRef } from "react";
 import Section from "../section/Section";
 import { useIntersection } from "./IntersectionHook";
@@ -19,10 +20,16 @@ const Content = () => {
 
   return (
     <React.Fragment>
-      <Section href={"about"} ref={refs.current[0]}></Section>
-      <Section href={"results"} ref={refs.current[1]}></Section>
-      <Section href={"team"} ref={refs.current[2]}></Section>
-      <Section href={"partners"} ref={refs.current[3]}></Section>
+      <Toolbar />
+      <Container>
+        <Box my={2}>
+          <div>test</div>
+          <Section href={"about"} ref={refs.current[0]}></Section>
+          <Section href={"results"} ref={refs.current[1]}></Section>
+          <Section href={"team"} ref={refs.current[2]}></Section>
+          <Section href={"partners"} ref={refs.current[3]}></Section>
+        </Box>
+      </Container>
     </React.Fragment>
   );
 };
