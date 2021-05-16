@@ -153,18 +153,23 @@ const NavBar: React.FC<Props> = (props) => {
     );
   };
 
+  // | 'flex-start'
+  // | 'center'
+  // | 'flex-end'
+  // | 'space-between'
+  // | 'space-around'
+  // | 'space-evenly';
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Grid container direction="row" justify="flex-end">
-            <Grid item xs={4}>
+          <Grid container justify="flex-start">
+            <Grid item xs={1} />
+            <Grid item xs>
               <TitleLink>{props.titleElement.text}</TitleLink>
             </Grid>
-
-            <Grid item xs={2}></Grid>
-
-            <Grid item xs={4}>
+            <Grid item xs />
+            <Grid item xs>
               <Typography
                 variant="h6"
                 color="textPrimary"
@@ -173,6 +178,7 @@ const NavBar: React.FC<Props> = (props) => {
                 {props.navElements.map(navElementToLink)}
               </Typography>
             </Grid>
+            <Grid item xs={1} />
           </Grid>
         </Toolbar>
       </AppBar>
