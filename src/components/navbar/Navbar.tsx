@@ -4,7 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import NavbarLink from "./NavBarLink";
+import NavbarLink, { TitleLink } from "./NavbarLink";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -126,50 +126,44 @@ const useStyles = makeStyles((theme: Theme) =>
 //   justify-content: space-between;
 // }
 
-export const topSection = "#";
-export const aboutSection = "#about";
-export const resultsSection = "#results";
-export const teamSection = "#team";
-export const partnersSection = "#partners";
+interface Props {
+  titleElement: NavElement;
+  navElements: Array<NavElement>;
+}
 
-const NavBar = () => {
+interface NavElement {
+  text: string;
+  href: string;
+}
+const NavBar: React.FC<Props> = (props) => {
   const classes = useStyles();
   // ToDo: read this from mobx state
-  const [activeLink, setActiveLink] = useState("#about");
+  const [activeLink, setActiveLink] = useState("");
+
+  const navElementToLink = (ele: NavElement) => {
+    return (
+      <NavbarLink
+        key={"key_" + ele.href}
+        active={activeLink === ele.href}
+        href={ele.href}
+      >
+        {ele.text}
+      </NavbarLink>
+    );
+  };
 
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+          <TitleLink>{props.titleElement.text}</TitleLink>
+          <div className={classes.flex}/>
           <Typography
             variant="h6"
             color="textPrimary"
             className={classes.linkSpacing}
           >
-            <NavbarLink active={false} href={topSection}>
-              DoDo
-            </NavbarLink>
-            <NavbarLink
-              active={activeLink === aboutSection}
-              href={aboutSection}
-            >
-              About
-            </NavbarLink>
-            <NavbarLink
-              active={activeLink === resultsSection}
-              href={resultsSection}
-            >
-              Results
-            </NavbarLink>
-            <NavbarLink active={activeLink === teamSection} href={teamSection}>
-              Team
-            </NavbarLink>
-            <NavbarLink
-              active={activeLink === partnersSection}
-              href={partnersSection}
-            >
-              Partners
-            </NavbarLink>
+            {props.navElements.map(navElementToLink)}
             <Button variant="contained">Tool Preview</Button>
           </Typography>
         </Toolbar>

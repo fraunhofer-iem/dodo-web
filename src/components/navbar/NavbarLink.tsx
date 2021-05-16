@@ -1,6 +1,7 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,6 +28,16 @@ interface LinkProps {
   active: boolean;
 }
 
+export const TitleLink = (props: PropsWithChildren<{}>) => {
+  return (
+    <Typography variant="h4" color="textPrimary">
+      <Link color="textPrimary" href={"#"} underline="none">
+         {props.children}
+      </Link>
+    </Typography>
+  );
+};
+
 const NavbarLink: React.FC<LinkProps> = (props) => {
   const classes = useStyles();
 
@@ -40,5 +51,4 @@ const NavbarLink: React.FC<LinkProps> = (props) => {
     </Link>
   );
 };
-
 export default NavbarLink;
