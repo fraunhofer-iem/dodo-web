@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import NavbarLink, { TitleLink } from "./NavbarLink";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -156,16 +157,23 @@ const NavBar: React.FC<Props> = (props) => {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <TitleLink>{props.titleElement.text}</TitleLink>
-          <div className={classes.flex}/>
-          <Typography
-            variant="h6"
-            color="textPrimary"
-            className={classes.linkSpacing}
-          >
-            {props.navElements.map(navElementToLink)}
-            <Button variant="contained">Tool Preview</Button>
-          </Typography>
+          <Grid container direction="row" justify="flex-end">
+            <Grid item xs={4}>
+              <TitleLink>{props.titleElement.text}</TitleLink>
+            </Grid>
+
+            <Grid item xs={2}></Grid>
+
+            <Grid item xs={4}>
+              <Typography
+                variant="h6"
+                color="textPrimary"
+                className={classes.linkSpacing}
+              >
+                {props.navElements.map(navElementToLink)}
+              </Typography>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>
