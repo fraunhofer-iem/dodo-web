@@ -3,8 +3,8 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
+import NavbarLink from "./NavBarLink";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,25 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
     appBar: {
       boxShadow: "none",
       backgroundColor: theme.palette.primary.main,
-    },
-    logo: {
-      height: "120px",
-      width: "140px",
-    },
-    link: {
-      "&:hover": {
-        color: theme.palette.secondary.main,
-      },
-      color: "#fff",
-    },
-    linkActive: {
-      borderRadius: "0.5rem",
-      paddingTop: "0.75rem",
-      paddingLeft: "0.5rem",
-      paddingRight: "1rem",
-      paddingBottom: "0.75rem",
-      background: theme.palette.secondary.main,
-      color: "#fff",
     },
   })
 );
@@ -145,34 +126,17 @@ const useStyles = makeStyles((theme: Theme) =>
 //   justify-content: space-between;
 // }
 
-interface LinkProps {
-  href: string;
-  active: boolean;
-}
-const NavbarLink: React.FC<LinkProps> = (props) => {
-  const classes = useStyles();
-
-  return (
-    <Link
-      href={props.href}
-      underline="none"
-      className={props.active ? classes.linkActive : classes.link}
-    >
-       {props.children}
-    </Link>
-  );
-};
+export const topSection = "#";
+export const aboutSection = "#about";
+export const resultsSection = "#results";
+export const teamSection = "#team";
+export const partnersSection = "#partners";
 
 const NavBar = () => {
   const classes = useStyles();
   // ToDo: read this from mobx state
   const [activeLink, setActiveLink] = useState("#about");
 
-  const topSection = "#";
-  const aboutSection = "#about";
-  const resultsSection = "#results";
-  const teamSection = "#team";
-  const partnersSection = "#partners";
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
@@ -182,21 +146,27 @@ const NavBar = () => {
             color="textPrimary"
             className={classes.linkSpacing}
           >
-            <NavbarLink active={false} href="#">
+            <NavbarLink active={false} href={topSection}>
               DoDo
             </NavbarLink>
-            <NavbarLink active={activeLink === aboutSection} href="#about">
+            <NavbarLink
+              active={activeLink === aboutSection}
+              href={aboutSection}
+            >
               About
             </NavbarLink>
-            <NavbarLink active={activeLink === resultsSection} href="#results">
+            <NavbarLink
+              active={activeLink === resultsSection}
+              href={resultsSection}
+            >
               Results
             </NavbarLink>
-            <NavbarLink active={activeLink === teamSection} href="#team">
+            <NavbarLink active={activeLink === teamSection} href={teamSection}>
               Team
             </NavbarLink>
             <NavbarLink
               active={activeLink === partnersSection}
-              href="#partners"
+              href={partnersSection}
             >
               Partners
             </NavbarLink>

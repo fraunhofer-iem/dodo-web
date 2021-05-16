@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Section from "../section/Section";
 import { useIntersection } from "./IntersectionHook";
 
@@ -19,22 +19,10 @@ const Content = () => {
 
   return (
     <React.Fragment>
-      <Section
-        href={"about"}
-        ref={refs.current[0]}
-        title={"Hello World"}
-      ></Section>
-      <Section href={"results"} ref={refs.current[1]} title={"Next"}></Section>
-      <Section
-        href={"team"}
-        ref={refs.current[2]}
-        title={"WhoopWhoop"}
-      ></Section>
-      <Section
-        href={"partners"}
-        ref={refs.current[3]}
-        title={"WhoopWhoop"}
-      ></Section>
+      <Section href={"about"} ref={refs.current[0]}></Section>
+      <Section href={"results"} ref={refs.current[1]}></Section>
+      <Section href={"team"} ref={refs.current[2]}></Section>
+      <Section href={"partners"} ref={refs.current[3]}></Section>
     </React.Fragment>
   );
 };
