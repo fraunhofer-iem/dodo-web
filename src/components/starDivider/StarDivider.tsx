@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  createStyles,
-  makeStyles,
-  Theme,
-} from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
 
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
 
@@ -32,7 +28,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
-
 
 const StarDivider = () => {
   const classes = useStyles();
