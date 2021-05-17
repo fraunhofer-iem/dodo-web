@@ -38,7 +38,7 @@ interface NavElement {
 const NavBar: React.FC<Props> = (props) => {
   const classes = useStyles();
   // ToDo: read this from mobx state
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink] = useState("");
 
   const navElementToLink = (ele: NavElement) => {
     return (
