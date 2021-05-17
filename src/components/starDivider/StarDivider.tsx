@@ -11,22 +11,24 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     star: {
       color: "#fff",
+      marginLeft: "1rem",
+      marginRight: "1rem",
       fontSize: "3rem",
     },
     starWrapper: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      margin: "1.25rem 0 1.5rem",
+      margin: "1.5rem 0 1.5rem",
       width: "100%",
     },
     starLine: {
       border: "solid",
-      height: "0.25rem",
+      height: "0.2rem",
       borderRadius: "1rem",
       color: "#fff",
       width: "100%",
-      maxWidth: "7rem",
+      maxWidth: "9rem",
     },
   })
 );
