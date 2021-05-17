@@ -18,10 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: "4rem",
     },
     box: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
+      marginLeft: "3rem",
+      columnCount: 2,
+      width: "40rem",
     },
   })
 );
@@ -34,8 +33,16 @@ const About = () => {
         About
       </Typography>
       <StarDivider color={PossibleColors.PRIMARY} />
-      <Typography variant="h3" color="textPrimary">
-        Doing Optimized DevOps
+      <Typography className={classes.box} variant="body1" color="textSecondary">
+        This is a bunch of text split into three columns using the CSS
+        `column-count` property. The text is equally distributed over the
+        columns. This is a bunch of text split into three columns using the CSS
+        `column-count` property. The text is equally distributed over the
+        columns. This is a bunch of text split into three columns using the CSS
+        `column-count` property. The text is equally distributed over the
+        columns. This is a bunch of text split into three columns using the CSS
+        `column-count` property. The text is equally distributed over the
+        columns.
       </Typography>
     </div>
   );
