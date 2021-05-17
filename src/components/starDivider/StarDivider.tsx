@@ -3,19 +3,12 @@ import {
   createStyles,
   makeStyles,
   Theme,
-  Box,
-  Container,
-  Typography,
 } from "@material-ui/core";
-import logo from "./logo.svg";
-import StarDivider from "../starDivider/StarDivider";
+
+import StarRoundedIcon from "@material-ui/icons/StarRounded";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      background: theme.palette.secondary.main,
-    },
     star: {
       color: "#fff",
       fontSize: "3rem",
@@ -38,24 +31,16 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface Props {}
 
-const About = (props: Props) => {
+const StarDivider = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Container>
-        <Box>
-          <img width="300px" src={logo} alt={"DoDo Project Logo"} />
-          <Typography variant="h1" color="textPrimary">
-            DoDo
-          </Typography>
-          <StarDivider />
-          We continue
-        </Box>
-      </Container>
+    <div className={classes.starWrapper}>
+      <div className={classes.starLine} />
+      <StarRoundedIcon className={classes.star} />
+      <div className={classes.starLine} />
     </div>
   );
 };
 
-export default About;
+export default StarDivider;
