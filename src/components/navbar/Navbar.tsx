@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import NavbarLink, { TitleLink } from "./NavbarLink";
-import { Grid, Typography, Toolbar, AppBar } from "@material-ui/core";
+import { Typography, Toolbar, AppBar } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme: Theme) =>
     appBar: {
       boxShadow: "none",
       backgroundColor: theme.palette.primary.main,
+    },
+    navRoot: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-around",
     },
   })
 );
@@ -49,23 +54,17 @@ const NavBar: React.FC<Props> = (props) => {
   return (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
-        <Grid container justify="center" alignItems="center">
-          <Grid item xs={1} />
-          <Grid item xs>
-            <TitleLink>{props.titleElement.text}</TitleLink>
-          </Grid>
-          <Grid item xs />
-          <Grid item xs>
-            <Typography
-              variant="h6"
-              color="textPrimary"
-              className={classes.linkSpacing}
-            >
-              {props.navElements.map(navElementToLink)}
-            </Typography>
-          </Grid>
-          <Grid item xs={1} />
-        </Grid>
+        <div className={classes.navRoot}>
+          <TitleLink>{props.titleElement.text}</TitleLink>
+
+          <Typography
+            variant="h6"
+            color="textPrimary"
+            className={classes.linkSpacing}
+          >
+            {props.navElements.map(navElementToLink)}
+          </Typography>
+        </div>
       </Toolbar>
     </AppBar>
   );
