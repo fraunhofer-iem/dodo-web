@@ -48,7 +48,7 @@ const contentElements = [
   { element: <Title />, id: titleId },
   { element: <About />, id: aboutId },
 ];
-console.log(theme.mixins.toolbar.minHeight);
+
 function App() {
   return (
     <React.Fragment>
