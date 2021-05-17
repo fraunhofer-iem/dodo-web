@@ -9,6 +9,7 @@ import About from "./components/about/About";
 import Content from "./components/content/Content";
 
 import NavBar from "./components/navbar/Navbar";
+import Title from "./components/title/Title";
 
 const theme = responsiveFontSizes(
   createMuiTheme({
@@ -28,6 +29,7 @@ const theme = responsiveFontSizes(
   })
 );
 
+export const titleId = "title";
 export const aboutId = "about";
 export const resultsId = "results";
 export const teamId = "team";
@@ -35,7 +37,7 @@ export const partnersId = "partners";
 
 const titleElement = {
   text: "DoDo",
-  href: "#",
+  href: "#title",
 };
 
 const getHrefFromId = (id: string) => "#" + id;
@@ -48,7 +50,8 @@ const navElements = [
 ];
 
 const contentElements = [
-  { element: <About/>, id: aboutId },
+  { element: <Title />, id: titleId },
+  { element: <About />, id: aboutId },
   { element: <div>so much glory</div>, id: resultsId },
   { element: <div>wow</div>, id: teamId },
   { element: <div>hello</div>, id: partnersId },

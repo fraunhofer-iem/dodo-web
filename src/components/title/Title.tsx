@@ -1,6 +1,6 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
-
+import logo from "./logo.svg";
 import { StarDivider } from "../starDivider/CustomDivider";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
+      background: theme.palette.secondary.main,
       paddingBottom: "5rem",
       paddingTop: "4rem",
     },
@@ -26,12 +27,13 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const About = () => {
+const Title = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography variant="h2" color="textSecondary">
-        About
+      <img className={classes.img} src={logo} alt={"DoDo Project Logo"} />
+      <Typography variant="h1" color="textPrimary">
+        DoDo
       </Typography>
       <StarDivider />
       <Typography variant="h3" color="textPrimary">
@@ -41,4 +43,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Title;

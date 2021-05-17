@@ -29,7 +29,9 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const StarDivider = () => {
+export const StarDividerWithTitle = () => {};
+
+export const StarDivider = () => {
   const classes = useStyles();
   return (
     <div className={classes.starWrapper}>
@@ -39,5 +41,3 @@ const StarDivider = () => {
     </div>
   );
 };
-
-export default StarDivider;
