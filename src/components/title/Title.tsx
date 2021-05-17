@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import logo from "./logo.svg";
-import { StarDivider } from "../starDivider/CustomDivider";
+import { PossibleColors, StarDivider } from "../starDivider/CustomDivider";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,7 +35,7 @@ const Title = () => {
       <Typography variant="h1" color="textPrimary">
         DoDo
       </Typography>
-      <StarDivider />
+      <StarDivider color={PossibleColors.WHITE} />
       <Typography variant="h3" color="textPrimary">
         Doing Optimized DevOps
       </Typography>
