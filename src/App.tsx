@@ -42,19 +42,11 @@ const titleElement = {
 
 const getHrefFromId = (id: string) => "#" + id;
 
-const navElements = [
-  { text: "About", href: getHrefFromId(aboutId) },
-  { text: "Results", href: getHrefFromId(resultsId) },
-  { text: "Team", href: getHrefFromId(teamId) },
-  { text: "Partners", href: getHrefFromId(partnersId) },
-];
+const navElements = [{ text: "About", href: getHrefFromId(aboutId) }];
 
 const contentElements = [
   { element: <Title />, id: titleId },
   { element: <About />, id: aboutId },
-  { element: <div>so much glory</div>, id: resultsId },
-  { element: <div>wow</div>, id: teamId },
-  { element: <div>hello</div>, id: partnersId },
 ];
 console.log(theme.mixins.toolbar.minHeight);
 function App() {

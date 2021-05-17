@@ -34,15 +34,14 @@ const About = () => {
       </Typography>
       <StarDivider color={PossibleColors.PRIMARY} />
       <Typography className={classes.box} variant="body1" color="textSecondary">
-        This is a bunch of text split into three columns using the CSS
-        `column-count` property. The text is equally distributed over the
-        columns. This is a bunch of text split into three columns using the CSS
-        `column-count` property. The text is equally distributed over the
-        columns. This is a bunch of text split into three columns using the CSS
-        `column-count` property. The text is equally distributed over the
-        columns. This is a bunch of text split into three columns using the CSS
-        `column-count` property. The text is equally distributed over the
-        columns.
+        Maturity Models are valuable to communicate the current state of DevOps,
+        especially towards the management. However, they often lack technical
+        depth and do not provide any guidance on improving the current maturity.
+        The research project DoDo addresses these shortcomings by combining a
+        maturity model with technical metrics using a hierarchical system of
+        KPIs. This method empowers its users to explore the detailed information
+        comprehensively, thereby enabling them to discover a clear path for
+        their DevOps journey.
       </Typography>
     </div>
   );
