@@ -16,25 +16,6 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       background: theme.palette.secondary.main,
     },
-    star: {
-      color: "#fff",
-      fontSize: "3rem",
-    },
-    starWrapper: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      margin: "1.25rem 0 1.5rem",
-      width: "100%",
-    },
-    starLine: {
-      border: "solid",
-      height: "0.25rem",
-      borderRadius: "1rem",
-      color: "#fff",
-      width: "100%",
-      maxWidth: "7rem",
-    },
   })
 );
 
