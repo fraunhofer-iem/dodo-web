@@ -5,6 +5,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import React from "react";
+import About from "./components/about/About";
 import Content from "./components/content/Content";
 
 import NavBar from "./components/navbar/Navbar";
@@ -47,10 +48,10 @@ const navElements = [
 ];
 
 const contentElements = [
-  { element: <div></div>, id: aboutId },
-  { element: <div></div>, id: resultsId },
-  { element: <div></div>, id: teamId },
-  { element: <div></div>, id: partnersId },
+  { element: <About/>, id: aboutId },
+  { element: <div>so much glory</div>, id: resultsId },
+  { element: <div>wow</div>, id: teamId },
+  { element: <div>hello</div>, id: partnersId },
 ];
 console.log(theme.mixins.toolbar.minHeight);
 function App() {
@@ -59,7 +60,7 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <NavBar navElements={navElements} titleElement={titleElement} />
-        <Content />
+        <Content sections={contentElements} />
       </ThemeProvider>
     </React.Fragment>
   );

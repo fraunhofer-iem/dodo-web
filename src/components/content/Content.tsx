@@ -27,7 +27,7 @@ const Content = (props: Props) => {
 
   const elementToSection = (ele: SectionElement, index: number) => {
     return (
-      <section id={ele.id} ref={refs.current[index]}>
+      <section key={"sec_key" + ele.id} id={ele.id} ref={refs.current[index]}>
         {ele.element}
       </section>
     );
