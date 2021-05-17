@@ -1,66 +1,74 @@
-import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import logo from './logo-with-name.svg';
-import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
+import React, { useState } from "react";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import NavbarLink, { TitleLink } from "./NavbarLink";
+import { Typography, Toolbar, AppBar } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      borderBottom: 'solid',
-      borderBottomColor: '#e0e0e0',
-      borderBottomWidth: '1px',
-    },
     flex: {
-      flexGrow: 1
+      flexGrow: 1,
     },
     linkSpacing: {
-      '& > * + *':{
-      marginLeft: theme.spacing(2)
-      }
+      "& > * + *": {
+        marginLeft: theme.spacing(2),
+      },
     },
     appBar: {
-      boxShadow: 'none',
-      backgroundColor: 'white',
-
+      boxShadow: "none",
+      backgroundColor: theme.palette.primary.main,
     },
-    logo: {
-      height:'120px',
-      width: '140px',
+    navRoot: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-around",
+      alignItems: "center",
     },
-  }),
+  })
 );
 
-export default function DenseAppBar() {
-  const classes = useStyles();
-  const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
-        <img className={classes.logo} src={logo} alt="Logo" />
-      <div className={classes.flex}/>
-          <Typography variant="h6" color="textPrimary" className={classes.linkSpacing}>
-            <Link href="#" onClick={preventDefault} color="inherit">
-              Overview
-            </Link>
-            <Link href="#" onClick={preventDefault} color="inherit">
-              Team
-            </Link>
-            <Link href="#" onClick={preventDefault} color="inherit">
-              Partner
-            </Link>
-            <Link href="#" onClick={preventDefault} color="inherit">
-              Contact
-            </Link>
-            <Button variant="contained">Tool Preview</Button>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+interface Props {
+  titleElement: NavElement;
+  navElements: Array<NavElement>;
 }
+
+interface NavElement {
+  text: string;
+  href: string;
+}
+const NavBar: React.FC<Props> = (props) => {
+  const classes = useStyles();
+  // ToDo: read this from mobx state
+  const [activeLink, setActiveLink] = useState("");
+
+  const navElementToLink = (ele: NavElement) => {
+    return (
+      <NavbarLink
+        key={"key_" + ele.href}
+        active={activeLink === ele.href}
+        href={ele.href}
+      >
+        {ele.text}
+      </NavbarLink>
+    );
+  };
+
+  return (
+    <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+        <div className={classes.navRoot}>
+          <TitleLink>{props.titleElement.text}</TitleLink>
+
+          <Typography
+            variant="h6"
+            color="textPrimary"
+            className={classes.linkSpacing}
+          >
+            {props.navElements.map(navElementToLink)}
+          </Typography>
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default NavBar;
