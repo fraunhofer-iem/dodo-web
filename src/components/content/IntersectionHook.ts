@@ -10,8 +10,6 @@ export function useIntersection(
       threshold: 1.0,
     };
     const callback = (entries: IntersectionObserverEntry[]) => {
-      console.log("intersection detected");
-      console.log(entries);
       // we can use the id of the element, which equals the href of the nav buttons,
       // to identify the currently intersecting (active) element and thereby highlight
       // the corresponding nav button.
@@ -24,7 +22,6 @@ export function useIntersection(
     });
 
     return () => {
-      console.log("disconnecting");
       observer.disconnect();
     };
   }, [refs]);
