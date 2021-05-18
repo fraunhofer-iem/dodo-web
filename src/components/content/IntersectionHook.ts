@@ -17,7 +17,6 @@ export function useIntersection(
       // section with the correct id (# represents no selection and should be on top of the page).
     };
     const observer = new IntersectionObserver(callback, options);
-    //observer.current = new IntersectionObserver(callback, options);
     refs.current.forEach((ref) => {
       if (ref.current !== null) observer.observe(ref.current);
     });
