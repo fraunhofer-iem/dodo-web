@@ -1,6 +1,9 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
+import { ContactFooter } from "./ContactFooter";
 import { Copyright } from "./Copyright";
+
+import { SocialFooter } from "./SocialFooter";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,6 +16,22 @@ const useStyles = makeStyles((theme: Theme) =>
       background: theme.palette.primary.main,
       paddingTop: "4rem",
     },
+    contentWrapper: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "flex-start",
+    },
+    content: {
+      marginLeft: "4rem",
+      marginRight: "4rem",
+      marginBottom: "1rem",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "#fff",
+    },
   })
 );
 
@@ -21,7 +40,14 @@ export const Footer = () => {
   return (
     <React.Fragment>
       <footer className={classes.root}>
-        This will be my awesome footer
+        <div className={classes.contentWrapper}>
+          <div className={classes.content}>
+            <ContactFooter />
+          </div>
+          <div className={classes.content}>
+            <SocialFooter />
+          </div>
+        </div>
         <Copyright />
       </footer>
     </React.Fragment>
