@@ -4,7 +4,7 @@ import { PossibleColors } from "../colors";
 import ContentWrapper from "../content/ContentWrapper";
 import swc from "./scampus.jpg";
 import sag from "./sag.svg";
-import iem from "./iem.jpg";
+import iem from "./iem-logo.svg";
 import bmbf from "./BMBF_Logo.svg";
 
 const useStyles = makeStyles((theme: Theme) =>
