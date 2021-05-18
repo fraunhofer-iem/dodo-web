@@ -7,6 +7,7 @@ import {
 import React from "react";
 import About from "./components/about/About";
 import Content from "./components/content/Content";
+import { Footer } from "./components/footer/Footer";
 
 import NavBar from "./components/navbar/Navbar";
 import Title from "./components/title/Title";
@@ -56,6 +57,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <NavBar navElements={navElements} titleElement={titleElement} />
         <Content sections={contentElements} />
+        <Footer />
       </ThemeProvider>
     </React.Fragment>
   );
