@@ -1,22 +1,10 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
-
-import { PossibleColors, StarDivider } from "../starDivider/CustomDivider";
+import { PossibleColors } from "../colors";
+import ContentWrapper from "../content/ContentWrapper";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    img: {
-      width: "22rem",
-      marginLeft: "2rem",
-    },
-    root: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      paddingBottom: "5rem",
-      paddingTop: "4rem",
-    },
     box: {
       marginLeft: "3rem",
       columnCount: 2,
@@ -28,11 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const About = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Typography variant="h2" color="textSecondary">
-        About
-      </Typography>
-      <StarDivider color={PossibleColors.PRIMARY} />
+    <ContentWrapper variant="h2" title="About" color={PossibleColors.PRIMARY}>
       <Typography className={classes.box} variant="body1" color="textSecondary">
         Maturity Models are valuable to communicate the current state of DevOps,
         especially towards the management. However, they often lack technical
@@ -43,7 +27,7 @@ const About = () => {
         comprehensively, thereby enabling them to discover a clear path for
         their DevOps journey.
       </Typography>
-    </div>
+    </ContentWrapper>
   );
 };
 

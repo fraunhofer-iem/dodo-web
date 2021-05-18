@@ -1,7 +1,8 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import logo from "./logo.svg";
-import { PossibleColors, StarDivider } from "../starDivider/CustomDivider";
+import { DividerWithTitle } from "../starDivider/CustomDivider";
+import { PossibleColors } from "../colors";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,12 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingBottom: "5rem",
       paddingTop: "4rem",
     },
-    box: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-    },
   })
 );
 
@@ -32,10 +27,11 @@ const Title = () => {
   return (
     <div className={classes.root}>
       <img className={classes.img} src={logo} alt={"DoDo Project Logo"} />
-      <Typography variant="h1" color="textPrimary">
-        DoDo
-      </Typography>
-      <StarDivider color={PossibleColors.WHITE} />
+      <DividerWithTitle
+        title="DoDo"
+        variant="h1"
+        color={PossibleColors.WHITE}
+      />
       <Typography variant="h3" color="textPrimary">
         Doing Optimized DevOps
       </Typography>
