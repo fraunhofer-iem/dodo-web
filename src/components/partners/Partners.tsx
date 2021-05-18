@@ -2,13 +2,25 @@ import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import { PossibleColors } from "../colors";
 import ContentWrapper from "../content/ContentWrapper";
+import swc from "./scampus.jpg";
+import sag from "./sag.svg";
+import iem from "./iem.jpg";
+import bmbf from "./BMBF_Logo.svg";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     box: {
-      marginLeft: "3rem",
-      columnCount: 2,
-      width: "40rem",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    img: {
+      width: "10rem",
+      marginLeft: "2rem",
+    },
+    imgHorizontal: {
+      width: "15rem",
+      marginLeft: "2rem",
     },
   })
 );
@@ -21,16 +33,23 @@ const Partners = () => {
       title="Partners"
       contentColor={PossibleColors.PRIMARY}
     >
-      <Typography className={classes.box} variant="body1" color="textPrimary">
-        Maturity Models are valuable to communicate the current state of DevOps,
-        especially towards the management. However, they often lack technical
-        depth and do not provide any guidance on improving the current maturity.
-        The research project DoDo addresses these shortcomings by combining a
-        maturity model with technical metrics using a hierarchical system of
-        KPIs. This method empowers its users to explore the detailed information
-        comprehensively, thereby enabling them to discover a clear path for
-        their DevOps journey.
+      <div className={classes.box}>
+        <img className={classes.img} src={swc} alt={"Software Campus Logo"} />
+        <img
+          className={classes.imgHorizontal}
+          src={sag}
+          alt={"Software AG Logo"}
+        />
+        <img
+          className={classes.imgHorizontal}
+          src={iem}
+          alt={"Fraunhofer IEM Logo"}
+        />
+      </div>
+      <Typography variant="h4" color="textSecondary">
+        Funded by
       </Typography>
+      <img className={classes.img} src={bmbf} alt={"BMBF Logo"} />
     </ContentWrapper>
   );
 };
