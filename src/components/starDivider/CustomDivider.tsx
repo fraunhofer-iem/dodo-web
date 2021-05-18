@@ -8,22 +8,11 @@ import {
 } from "@material-ui/core";
 
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
-import { PossibleColors } from "../colors";
+import { getColor, PossibleColors } from "../colors";
 
 interface Props {
   color: PossibleColors;
 }
-
-const getColor = (theme: Theme, color: PossibleColors) => {
-  switch (color) {
-    case PossibleColors.WHITE:
-      return "#fff";
-    case PossibleColors.PRIMARY:
-      return theme.palette.primary.main;
-    case PossibleColors.SECONDARY:
-      return theme.palette.secondary.main;
-  }
-};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
