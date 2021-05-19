@@ -56,7 +56,9 @@ const NavBar: React.FC<Props> = (props) => {
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
         <div className={classes.navRoot}>
-          <TitleLink>{props.titleElement.text}</TitleLink>
+          <TitleLink active={false} href={props.titleElement.href}>
+            {props.titleElement.text}
+          </TitleLink>
 
           <Typography
             variant="h6"

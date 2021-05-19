@@ -2,14 +2,21 @@ import React, { PropsWithChildren } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 import { Typography } from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     link: {
       "&:hover": {
         color: theme.palette.secondary.main,
+        textDecoration: "none",
       },
       color: "#fff",
+    },
+    titleLink: {
+      "&:hover": {
+        textDecoration: "none",
+      },
     },
     linkActive: {
       borderRadius: "0.5rem",
@@ -28,10 +35,16 @@ interface LinkProps {
   active: boolean;
 }
 
-export const TitleLink = (props: PropsWithChildren<{}>) => {
+export const TitleLink = (props: PropsWithChildren<LinkProps>) => {
+  const classes = useStyles();
   return (
     <Typography variant="h4" color="textPrimary">
-      <Link color="textPrimary" href={"#"} underline="none">
+      <Link
+        color="textPrimary"
+        to={props.href}
+        component={RouterLink}
+        className={classes.titleLink}
+      >
          {props.children}
       </Link>
     </Typography>
@@ -43,8 +56,8 @@ const NavbarLink: React.FC<LinkProps> = (props) => {
 
   return (
     <Link
-      href={props.href}
-      underline="none"
+      to={props.href}
+      component={RouterLink}
       className={props.active ? classes.linkActive : classes.link}
     >
        {props.children}
