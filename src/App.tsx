@@ -6,7 +6,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import About from "./components/about/About";
-import Content from "./components/content/Content";
+import Home from "./components/home/Home";
 import { Footer } from "./components/footer/Footer";
 
 import NavBar from "./components/navbar/Navbar";
@@ -61,7 +61,7 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <NavBar navElements={navElements} titleElement={titleElement} />
-        <Content sections={contentElements} />
+        <Home sections={contentElements} />
         <Footer />
       </ThemeProvider>
     </React.Fragment>
