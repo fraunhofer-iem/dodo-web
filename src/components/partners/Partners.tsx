@@ -2,8 +2,6 @@ import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import { PossibleColors } from "../colors";
 import ContentWrapper from "../content/ContentWrapper";
-import swc from "./scampus.jpg";
-import sag from "./sag.svg";
 import iem from "./iem-logo.svg";
 import bmbf from "./BMBF_Logo.svg";
 
@@ -34,12 +32,12 @@ const Partners = () => {
       contentColor={PossibleColors.PRIMARY}
     >
       <div className={classes.box}>
-        <img className={classes.img} src={swc} alt={"Software Campus Logo"} />
+        {/* <img className={classes.img} src={swc} alt={"Software Campus Logo"} />
         <img
           className={classes.imgHorizontal}
           src={sag}
           alt={"Software AG Logo"}
-        />
+        /> */}
         <img
           className={classes.imgHorizontal}
           src={iem}
