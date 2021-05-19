@@ -4,6 +4,7 @@ import { PossibleColors } from "../colors";
 import ContentWrapper from "../content/ContentWrapper";
 import iem from "./iem-logo.svg";
 import bmbf from "./BMBF_Logo.svg";
+import swc from "./scampus.jpg";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,8 +33,8 @@ const Partners = () => {
       contentColor={PossibleColors.PRIMARY}
     >
       <div className={classes.box}>
-        {/* <img className={classes.img} src={swc} alt={"Software Campus Logo"} />
-        <img
+        <img className={classes.img} src={swc} alt={"Software Campus Logo"} />
+        {/* <img
           className={classes.imgHorizontal}
           src={sag}
           alt={"Software AG Logo"}
