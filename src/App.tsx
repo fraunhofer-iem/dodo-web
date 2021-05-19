@@ -3,7 +3,6 @@ import {
   createMuiTheme,
   responsiveFontSizes,
   ThemeProvider,
-  Switch,
 } from "@material-ui/core";
 import React from "react";
 import About from "./components/about/About";
@@ -13,7 +12,7 @@ import { Footer } from "./components/footer/Footer";
 import NavBar from "./components/navbar/Navbar";
 import Partners from "./components/partners/Partners";
 import Title from "./components/title/Title";
-import { HashRouter, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Impressum from "./components/impressum/Impressum";
 
 const theme = responsiveFontSizes(
@@ -44,7 +43,7 @@ const titleElement = {
   href: "title",
 };
 
-const getHrefFromId = (id: string) => id;
+const getHrefFromId = (id: string) => "#" + id;
 
 const navElements = [
   { text: "About", href: getHrefFromId(aboutId) },
@@ -63,19 +62,15 @@ function App() {
     <React.Fragment>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <HashRouter hashType={"noslash"}>
-          <NavBar navElements={navElements} titleElement={titleElement} />
-
-          <Home sections={contentElements} />
-        </HashRouter>
-        {/* <Switch>
+        <NavBar navElements={navElements} titleElement={titleElement} />
+        <Switch>
           <Route path="/impressum">
             <Impressum />
           </Route>
           <Route path="/">
             <Home sections={contentElements} />
           </Route>
-        </Switch> */}
+        </Switch>
 
         <Footer />
       </ThemeProvider>

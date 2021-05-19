@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 import { Typography } from "@material-ui/core";
-import { Link as RouterLink } from "react-router-dom";
+import { HashLink as RouterLink } from "react-router-hash-link";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -41,7 +41,7 @@ export const TitleLink = (props: PropsWithChildren<LinkProps>) => {
     <Typography variant="h4" color="textPrimary">
       <Link
         color="textPrimary"
-        to={props.href}
+        to="/home#top"
         component={RouterLink}
         className={classes.titleLink}
       >
