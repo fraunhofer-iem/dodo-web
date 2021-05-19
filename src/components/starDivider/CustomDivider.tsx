@@ -1,28 +1,18 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+  Typography,
+  TypographyVariant,
+} from "@material-ui/core";
 
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
-
-export enum PossibleColors {
-  WHITE,
-  PRIMARY,
-  SECONDARY,
-}
+import { getColor, PossibleColors } from "../colors";
 
 interface Props {
   color: PossibleColors;
 }
-
-const getColor = (theme: Theme, color: PossibleColors) => {
-  switch (color) {
-    case PossibleColors.WHITE:
-      return "#fff";
-    case PossibleColors.PRIMARY:
-      return theme.palette.primary.main;
-    case PossibleColors.SECONDARY:
-      return theme.palette.secondary.main;
-  }
-};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -49,6 +39,23 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
   })
 );
+interface PropsTitle {
+  color: PossibleColors;
+  title: string;
+  variant: TypographyVariant;
+}
+export const DividerWithTitle = (props: PropsTitle) => {
+  const textColor =
+    props.color === PossibleColors.WHITE ? "textPrimary" : "textSecondary";
+  return (
+    <React.Fragment>
+      <Typography variant={props.variant} color={textColor}>
+        {props.title}
+      </Typography>
+      <StarDivider color={props.color} />
+    </React.Fragment>
+  );
+};
 
 export const StarDivider = (props: Props) => {
   const classes = useStyles(props);

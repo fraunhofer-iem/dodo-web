@@ -13,11 +13,16 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const About = () => {
+const Concepts = () => {
   const classes = useStyles();
   return (
-    <ContentWrapper variant="h2" title="About" contentColor={PossibleColors.PRIMARY}>
-      <Typography className={classes.box} variant="body1" color="textSecondary">
+    <ContentWrapper
+      variant="h2"
+      title="Ideas & Concepts"
+      contentColor={PossibleColors.WHITE}
+      background={PossibleColors.SECONDARY}
+    >
+      <Typography className={classes.box} variant="body1" color="textPrimary">
         Maturity Models are valuable to communicate the current state of DevOps,
         especially towards the management. However, they often lack technical
         depth and do not provide any guidance on improving the current maturity.
@@ -31,4 +36,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Concepts;

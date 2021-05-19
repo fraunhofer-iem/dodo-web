@@ -1,5 +1,5 @@
 import { Typography } from "@material-ui/core";
-import { LinkedIn, Twitter } from "@material-ui/icons";
+import { GitHub, LinkedIn, Twitter } from "@material-ui/icons";
 import React from "react";
 
 import { FooterButton } from "./FooterButton";
@@ -16,6 +16,9 @@ export const SocialFooter = () => {
         </FooterButton>
         <FooterButton href="https://www.linkedin.com/company/fraunhofer-iem">
           <LinkedIn fontSize="large" />
+        </FooterButton>
+        <FooterButton href="https://github.com/fraunhofer-iem">
+          <GitHub fontSize="large" />
         </FooterButton>
       </div>
     </React.Fragment>
