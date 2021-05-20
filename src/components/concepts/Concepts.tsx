@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import { PossibleColors } from "../colors";
-import ContentWrapper from "../content/ContentWrapper";
+import ContentWrapper from "../home/SectionWrapper";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -30,7 +30,7 @@ interface Props {
   background?: PossibleColors;
 }
 
-const ContentWrapper = (props: PropsWithChildren<Props>) => {
+const SectionWrapper = (props: PropsWithChildren<Props>) => {
   const classes = useStyles(props);
 
   return (
@@ -45,4 +45,4 @@ const ContentWrapper = (props: PropsWithChildren<Props>) => {
   );
 };
 
-export default ContentWrapper;
+export default SectionWrapper;

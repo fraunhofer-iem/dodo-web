@@ -1,6 +1,7 @@
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-
+import { Link as RouterLink } from "react-router-dom";
+import Link from "@material-ui/core/Link";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -13,12 +14,23 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: "1rem",
       color: "#fff",
     },
+    link: {
+      color: "#fff",
+      "&:hover": {
+        textDecoration: "none",
+      },
+    },
   })
 );
 
 export const Copyright = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>Copyright © by Fraunhofer-Gesellschaft</div>
+    <div className={classes.root}>
+      <Typography>Copyright © by Fraunhofer-Gesellschaft |</Typography>
+      <Link to={"/impressum"} component={RouterLink} className={classes.link}>
+         Impressum &amp; Data Protection
+      </Link>
+    </div>
   );
 };
