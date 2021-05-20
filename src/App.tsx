@@ -14,6 +14,7 @@ import Partners from "./components/partners/Partners";
 import Title from "./components/title/Title";
 import { Route, Switch } from "react-router-dom";
 import Impressum from "./components/impressum/Impressum";
+import DataProtection from "./components/impressum/DataProtection";
 
 const theme = responsiveFontSizes(
   createMuiTheme({
@@ -66,6 +67,7 @@ function App() {
         <Switch>
           <Route path="/impressum">
             <Impressum />
+            <DataProtection />
           </Route>
           <Route path="/">
             <Home sections={contentElements} />
