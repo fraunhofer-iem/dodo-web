@@ -6,12 +6,15 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import About from "./components/about/About";
-import Content from "./components/content/Content";
+import Home from "./components/home/Home";
 import { Footer } from "./components/footer/Footer";
 
 import NavBar from "./components/navbar/Navbar";
 import Partners from "./components/partners/Partners";
 import Title from "./components/title/Title";
+import { Route, Switch } from "react-router-dom";
+import Impressum from "./components/impressum/Impressum";
+import DataProtection from "./components/impressum/DataProtection";
 
 const theme = responsiveFontSizes(
   createMuiTheme({
@@ -38,14 +41,14 @@ export const partnersId = "partners";
 
 const titleElement = {
   text: "DoDo",
-  href: "#title",
+  href: "title",
 };
 
 const getHrefFromId = (id: string) => "#" + id;
 
 const navElements = [
   { text: "About", href: getHrefFromId(aboutId) },
-  { text: "Partners", href: getHrefFromId(aboutId) },
+  { text: "Partners", href: getHrefFromId(partnersId) },
 ];
 
 const contentElements = [
@@ -61,7 +64,16 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <NavBar navElements={navElements} titleElement={titleElement} />
-        <Content sections={contentElements} />
+        <Switch>
+          <Route path="/impressum">
+            <Impressum />
+            <DataProtection />
+          </Route>
+          <Route path="/">
+            <Home sections={contentElements} />
+          </Route>
+        </Switch>
+
         <Footer />
       </ThemeProvider>
     </React.Fragment>

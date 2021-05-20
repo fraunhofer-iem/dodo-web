@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import { PossibleColors } from "../colors";
-import ContentWrapper from "../content/ContentWrapper";
+import ContentWrapper from "../home/SectionWrapper";
 import iem from "./iem-logo.svg";
 import bmbf from "./BMBF_Logo.svg";
 import swc from "./scampus.jpg";

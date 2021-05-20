@@ -20,7 +20,7 @@ interface Props {
   sections: Array<SectionElement>;
 }
 
-const Content = (props: Props) => {
+const Home = (props: Props) => {
   const refs = useRef<Array<React.RefObject<HTMLElement>>>([]);
   fillRefsArray(props.sections.length, refs.current);
   useIntersection(refs);
@@ -41,4 +41,4 @@ const Content = (props: Props) => {
   );
 };
 
-export default Content;
+export default Home;

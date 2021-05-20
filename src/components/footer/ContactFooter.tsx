@@ -7,7 +7,7 @@ export const ContactFooter = () => {
       <Typography variant={"h4"} gutterBottom={true}>
         Contact
       </Typography>
-      <Typography variant={"body1"}>Jan-Niclas Struewer</Typography>
+      <Typography variant={"body1"}>Jan-Niclas Str&uuml;wer</Typography>
       <Typography variant={"body1"}>Fraunhofer IEM</Typography>
       <Typography variant={"body1"}>Zukunftsmeile 1</Typography>
       <Typography variant={"body1"} gutterBottom={true}>
