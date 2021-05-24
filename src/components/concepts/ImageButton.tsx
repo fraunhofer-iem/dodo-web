@@ -9,17 +9,10 @@ const useStyles = makeStyles((theme: Theme) =>
     image: {
       position: 'relative',
       height: 200,
-      [theme.breakpoints.down('xs')]: {
-        width: '100% !important', // Overrides inline-style
-        height: 100,
-      },
       '&:hover, &$focusVisible': {
         zIndex: 1,
         '& $imageBackdrop': {
           opacity: 0.5,
-        },
-        '& $imageMarked': {
-          opacity: 0,
         },
         '& $imageTitle': {
           fontSize: '10rem',
@@ -66,6 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface Props {
     image: {title: string, width: number, url: string}
+    handleClick: () => void
 }
 const ImageButton = (props: Props) => {
   const classes = useStyles();
@@ -74,6 +68,7 @@ const ImageButton = (props: Props) => {
     focusRipple
     key={props.image.title}
     className={classes.image}
+    onClick={props.handleClick}
     focusVisibleClassName={classes.focusVisible}
     style={{
       width: props.image.width,

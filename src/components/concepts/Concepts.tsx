@@ -1,10 +1,10 @@
 import React from "react";
-import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import { PossibleColors } from "../colors";
 import ContentWrapper from "../home/SectionWrapper";
-import ImageButton from "./ImageButton";
 import FrameworkButtonLogo from "./FrameworkButton.png"
-import { url } from "inspector";
+import ConceptWrapper from "./ConceptWrapper";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     box: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Concepts = () => {
   const classes = useStyles();
-  console.log(FrameworkButtonLogo);
+
   return (
     <ContentWrapper
       variant="h2"
@@ -26,7 +26,7 @@ const Concepts = () => {
       contentColor={PossibleColors.WHITE}
       background={PossibleColors.SECONDARY}
     >
-      <ImageButton image={{url: FrameworkButtonLogo, title: "Framework", width: 300}}/>
+     <ConceptWrapper image={{url: FrameworkButtonLogo, title: "Framework", width: 300}} /> 
     </ContentWrapper>
   );
 };
