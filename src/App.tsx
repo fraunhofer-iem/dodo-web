@@ -15,6 +15,7 @@ import Title from "./components/title/Title";
 import { Route, Switch } from "react-router-dom";
 import Impressum from "./components/impressum/Impressum";
 import DataProtection from "./components/impressum/DataProtection";
+import Concepts from "./components/concepts/Concepts";
 
 const theme = responsiveFontSizes(
   createMuiTheme({
@@ -54,7 +55,7 @@ const navElements = [
 const contentElements = [
   { element: <Title />, id: titleId },
   { element: <About />, id: aboutId },
-  // { element: <Concepts />, id: conceptsId },
+  { element: <Concepts />, id: conceptsId },
   { element: <Partners />, id: partnersId },
 ];
 
