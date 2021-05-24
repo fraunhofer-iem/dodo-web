@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import NavbarLink, { TitleLink } from "./NavbarLink";
 import { Typography, Toolbar, AppBar } from "@material-ui/core";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

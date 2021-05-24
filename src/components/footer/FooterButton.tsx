@@ -1,11 +1,10 @@
 import {
   Avatar,
-  createStyles,
   IconButton,
-  makeStyles,
-  Theme,
 } from "@material-ui/core";
 import React, { PropsWithChildren } from "react";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

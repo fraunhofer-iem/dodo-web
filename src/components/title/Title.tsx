@@ -1,5 +1,7 @@
 import React from "react";
-import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 import logo from "./logo.svg";
 import { DividerWithTitle } from "../starDivider/CustomDivider";
 import { PossibleColors } from "../colors";

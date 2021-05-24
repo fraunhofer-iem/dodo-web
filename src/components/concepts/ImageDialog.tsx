@@ -1,6 +1,7 @@
 import React from "react";
-import { Backdrop, createStyles,  Fade, makeStyles, Modal, Theme,  } from "@material-ui/core";
-
+import { Backdrop,  Fade, Modal  } from "@material-ui/core";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

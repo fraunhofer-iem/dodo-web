@@ -1,9 +1,10 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import { PossibleColors } from "../colors";
 import ContentWrapper from "../home/SectionWrapper";
 import FrameworkButtonLogo from "./FrameworkButton.png"
 import ConceptWrapper from "./ConceptWrapper";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 import ImageButton from "./ImageButton";
 import ImageDialog from "./ImageDialog";
 

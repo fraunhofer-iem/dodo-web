@@ -1,10 +1,9 @@
 import React, { PropsWithChildren } from "react";
 import {
-  createStyles,
-  makeStyles,
-  Theme,
   TypographyVariant,
 } from "@material-ui/core";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 
 import { DividerWithTitle } from "../starDivider/CustomDivider";
 import { getColor, PossibleColors } from "../colors";

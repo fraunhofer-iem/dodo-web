@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 import Link from "@material-ui/core/Link";
 import { Typography } from "@material-ui/core";
 import { HashLink as RouterLink } from "react-router-hash-link";

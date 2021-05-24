@@ -1,11 +1,10 @@
 import React from "react";
 import {
-  createStyles,
-  makeStyles,
-  Theme,
   Typography,
   TypographyVariant,
 } from "@material-ui/core";
+import { Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from '@material-ui/styles';
 
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import { getColor, PossibleColors } from "../colors";

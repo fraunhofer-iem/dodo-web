@@ -1,13 +1,10 @@
 import React from "react";
-import {
-  createStyles,
-  Link,
-  makeStyles,
-  Theme,
-  Typography,
-} from "@material-ui/core";
+import { createStyles, makeStyles } from '@material-ui/styles';
 import { PossibleColors } from "../colors";
 import ContentWrapper from "../home/SectionWrapper";
+import { Theme } from "@material-ui/core/styles";
+import { Link, Typography } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
