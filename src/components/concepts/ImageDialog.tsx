@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
+      borderRadius: "1rem",
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
@@ -42,13 +43,13 @@ const ImageDialog = (props: Props) => {
       timeout: 500,
     }}
   >
-<Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
-          </div>
-        </Fade>
-</Modal>
+    <Fade in={open}>
+      <div className={classes.paper}>
+        <h2 id="transition-modal-title">Transition modal</h2>
+        <p id="transition-modal-description">react-transition-group animates me.</p>
+      </div>
+    </Fade>
+  </Modal>
   );
 };
 
