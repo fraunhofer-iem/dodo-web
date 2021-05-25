@@ -3,14 +3,11 @@ import { experimentalStyled as styled } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
+import { AddOutlined } from "@material-ui/icons";
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
   height: 200,
-  [theme.breakpoints.down("sm")]: {
-    width: "100% !important", // Overrides inline-style
-    height: 100,
-  },
   "&:hover, &.Mui-focusVisible": {
     zIndex: 1,
     "& .MuiImageBackdrop-root": {
@@ -20,7 +17,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
       opacity: 0,
     },
     "& .MuiTypography-root": {
-      border: "4px solid currentColor",
+      opacity: 1,
     },
   },
 }));
@@ -53,18 +50,8 @@ const ImageBackdrop = styled("span")(({ theme }) => ({
   right: 0,
   top: 0,
   bottom: 0,
-  backgroundColor: theme.palette.common.black,
-  opacity: 0.4,
-  transition: theme.transitions.create("opacity"),
-}));
-
-const ImageMarked = styled("span")(({ theme }) => ({
-  height: 3,
-  width: 18,
-  backgroundColor: theme.palette.common.white,
-  position: "absolute",
-  bottom: -2,
-  left: "calc(50% - 9px)",
+  backgroundColor: theme.palette.primary.main,
+  opacity: 0,
   transition: theme.transitions.create("opacity"),
 }));
 
@@ -90,17 +77,16 @@ export default function ImgButton(props: Props) {
         <Image>
           <Typography
             component="span"
-            variant="subtitle1"
-            color="inherit"
+            color="white"
             sx={{
+              fontSize: "10rem",
               position: "relative",
               p: 4,
-              pt: 2,
-              pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+              pt: 10,
+              opacity: 0,
             }}
           >
-            {props.image.title}
-            <ImageMarked className="MuiImageMarked-root" />
+            <AddOutlined fontSize="inherit" />
           </Typography>
         </Image>
       </ImageButton>
