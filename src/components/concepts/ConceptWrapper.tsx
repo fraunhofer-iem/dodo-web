@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { Box } from "@material-ui/core";
 import ImgButton from "./ImageButton";
 import ImageDialog from "./ImageDialog";
 
 interface Props {
-  image: { title: string; width: number; url: string };
+  thumbnail: { title: string; width: number; url: string };
+  contentImage?: { title: string; width: number; url: string };
+  contentDescription: string;
 }
 const ConceptWrapper = (props: Props) => {
   const [open, setOpen] = useState(false);
@@ -15,10 +18,10 @@ const ConceptWrapper = (props: Props) => {
     setOpen(false);
   };
   return (
-    <React.Fragment>
-      <ImgButton handleClick={handleClick} image={props.image} />
+    <Box>
+      <ImgButton handleClick={handleClick} image={props.thumbnail} />
       <ImageDialog onClose={handleClose} open={open} />
-    </React.Fragment>
+    </Box>
   );
 };
 
