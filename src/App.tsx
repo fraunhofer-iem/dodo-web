@@ -1,4 +1,9 @@
-import { createTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
+import {
+  createTheme,
+  responsiveFontSizes,
+  StyledEngineProvider,
+  ThemeProvider,
+} from "@material-ui/core/styles";
 import React from "react";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
@@ -11,8 +16,7 @@ import { Route, Switch } from "react-router-dom";
 import Impressum from "./components/impressum/Impressum";
 import DataProtection from "./components/impressum/DataProtection";
 import Concepts from "./components/concepts/Concepts";
-import  CssBaseline from '@material-ui/core/CssBaseline';
-
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const theme = responsiveFontSizes(
   createTheme({
@@ -59,21 +63,23 @@ const contentElements = [
 function App() {
   return (
     <React.Fragment>
-      <CssBaseline />
-      <ThemeProvider theme={theme}>
-        <NavBar navElements={navElements} titleElement={titleElement} />
-        <Switch>
-          <Route path="/impressum">
-            <Impressum />
-            <DataProtection />
-          </Route>
-          <Route path="/">
-            <Home sections={contentElements} />
-          </Route>
-        </Switch>
+      <StyledEngineProvider injectFirst>
+        <CssBaseline />
+        <ThemeProvider theme={theme}>
+          <NavBar navElements={navElements} titleElement={titleElement} />
+          <Switch>
+            <Route path="/impressum">
+              <Impressum />
+              <DataProtection />
+            </Route>
+            <Route path="/">
+              <Home sections={contentElements} />
+            </Route>
+          </Switch>
 
-        <Footer />
-      </ThemeProvider>
+          <Footer />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </React.Fragment>
   );
 }

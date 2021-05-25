@@ -1,56 +1,49 @@
 import React from "react";
-import { Backdrop,  Fade, Modal  } from "@material-ui/core";
-import { Theme } from "@material-ui/core/styles";
-import { createStyles, makeStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    modal: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    paper: {
-      backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
-      borderRadius: "1rem",
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
-    },
-  }),
-);
+import Backdrop from "@material-ui/core/Backdrop";
+import Box from "@material-ui/core/Box";
+import Modal from "@material-ui/core/Modal";
+import Fade from "@material-ui/core/Fade";
 
 interface Props {
   open: boolean;
-
   onClose: () => void;
 }
 const ImageDialog = (props: Props) => {
-  const classes = useStyles();
-
   const { onClose, open } = props;
-
 
   return (
     <Modal
-    aria-labelledby="transition-modal-title"
-    aria-describedby="transition-modal-description"
-    className={classes.modal}
-    open={open}
-    onClose={onClose}
-    closeAfterTransition
-    BackdropComponent={Backdrop}
-    BackdropProps={{
-      timeout: 500,
-    }}
-  >
-    <Fade in={open}>
-      <div className={classes.paper}>
-        <h2 id="transition-modal-title">Transition modal</h2>
-        <p id="transition-modal-description">react-transition-group animates me.</p>
-      </div>
-    </Fade>
-  </Modal>
+      aria-labelledby="transition-modal-title"
+      aria-describedby="transition-modal-description"
+      open={open}
+      onClose={onClose}
+      closeAfterTransition
+      BackdropComponent={Backdrop}
+      BackdropProps={{
+        timeout: 500,
+      }}
+    >
+      <Fade in={open}>
+        <Box
+          sx={{
+            position: "absolute" as "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "background.paper",
+            border: "2px solid #000",
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <h2 id="transition-modal-title">Transition modal</h2>
+          <p id="transition-modal-description">
+            react-transition-group animates me.
+          </p>
+        </Box>
+      </Fade>
+    </Modal>
   );
 };
 

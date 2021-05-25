@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ImageButton from "./ImageButton";
+import ImgButton from "./ImageButton";
 import ImageDialog from "./ImageDialog";
 
 interface Props {
@@ -16,7 +16,7 @@ const ConceptWrapper = (props: Props) => {
   };
   return (
     <React.Fragment>
-      <ImageButton handleClick={handleClick} image={props.image} />
+      <ImgButton handleClick={handleClick} image={props.image} />
       <ImageDialog onClose={handleClose} open={open} />
     </React.Fragment>
   );
