@@ -1,46 +1,35 @@
 import React, { PropsWithChildren } from "react";
-import {
-  TypographyVariant,
-} from "@material-ui/core";
-import { Theme } from "@material-ui/core/styles";
-import { createStyles, makeStyles } from '@material-ui/styles';
-
+import { Box, TypographyVariant } from "@material-ui/core";
 import { DividerWithTitle } from "../starDivider/CustomDivider";
-import { getColor, PossibleColors } from "../colors";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: (props: Props) => ({
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      paddingBottom: "5rem",
-      paddingTop: "4rem",
-      background: props.background ? getColor(theme, props.background) : "#fff",
-    }),
-  })
-);
+import { PossibleColors } from "../colors";
 
 interface Props {
   title: string;
   variant: TypographyVariant;
   contentColor: PossibleColors;
-  background?: PossibleColors;
+  background: PossibleColors;
 }
 
 const SectionWrapper = (props: PropsWithChildren<Props>) => {
-  const classes = useStyles(props);
-
   return (
-    <div className={classes.root}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingBottom: "5rem",
+        paddingTop: "4rem",
+        backgroundColor: props.background,
+      }}
+    >
       <DividerWithTitle
         title={props.title}
         variant={props.variant}
         color={props.contentColor}
       />
       {props.children}
-    </div>
+    </Box>
   );
 };
 

@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 import React from "react";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
@@ -11,7 +11,7 @@ import { Route, Switch } from "react-router-dom";
 import Impressum from "./components/impressum/Impressum";
 import DataProtection from "./components/impressum/DataProtection";
 import Concepts from "./components/concepts/Concepts";
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import  CssBaseline from '@material-ui/core/CssBaseline';
 
 
 const theme = responsiveFontSizes(

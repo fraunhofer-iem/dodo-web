@@ -1,39 +1,30 @@
 import React from "react";
-import { createStyles, makeStyles } from '@material-ui/styles';
-import { PossibleColors } from "../colors";
 import ContentWrapper from "../home/SectionWrapper";
-import { Theme } from "@material-ui/core/styles";
-import { Link, Typography } from "@material-ui/core";
-
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    wrapper: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      background: "#fff",
-      flexWrap: "wrap",
-      gap: "5rem",
-    },
-    box: {
-      marginLeft: "3rem",
-      width: "40rem",
-    },
-  })
-);
+import { Box, Link, Typography } from "@material-ui/core";
 
 const About = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.wrapper}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#fff",
+        flexWrap: "wrap",
+        gap: "5rem",
+      }}
+    >
       <ContentWrapper
         variant="h2"
         title="About"
-        contentColor={PossibleColors.PRIMARY}
+        background={"#fff"}
+        contentColor={"primary.main"}
       >
         <Typography
-          className={classes.box}
+          sx={{
+            marginLeft: "3rem",
+            width: "40rem",
+          }}
           variant="body1"
           color="textSecondary"
         >
@@ -55,10 +46,14 @@ const About = () => {
       <ContentWrapper
         variant="h2"
         title="Project Idea"
-        contentColor={PossibleColors.PRIMARY}
+        background={"#fff"}
+        contentColor={"primary.main"}
       >
         <Typography
-          className={classes.box}
+          sx={{
+            marginLeft: "3rem",
+            width: "40rem",
+          }}
           variant="body1"
           color="textSecondary"
         >
@@ -74,7 +69,7 @@ const About = () => {
           path for their DevOps journey.
         </Typography>
       </ContentWrapper>
-    </div>
+    </Box>
   );
 };
 
