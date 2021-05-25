@@ -5,8 +5,8 @@ import ImageDialog from "./ImageDialog";
 
 interface Props {
   thumbnail: { title: string; width: number; url: string };
-  contentImage?: { title: string; width: number; url: string };
-  contentDescription: string;
+  dialogImage?: { title: string; width: number; url: string };
+  dialogContent: { title: string; body: string };
 }
 const ConceptWrapper = (props: Props) => {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,12 @@ const ConceptWrapper = (props: Props) => {
   return (
     <Box>
       <ImgButton handleClick={handleClick} image={props.thumbnail} />
-      <ImageDialog onClose={handleClose} open={open} />
+      <ImageDialog
+        dialogContent={props.dialogContent}
+        dialogImage={props.dialogImage}
+        onClose={handleClose}
+        open={open}
+      />
     </Box>
   );
 };

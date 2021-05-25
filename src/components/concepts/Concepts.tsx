@@ -4,6 +4,9 @@ import FrameworkButtonLogo from "./FrameworkButton.png";
 import ConceptWrapper from "./ConceptWrapper";
 import Box from "@material-ui/core/Box";
 
+const frameworkContent =
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.";
+
 const Concepts = () => {
   return (
     <ContentWrapper
@@ -22,7 +25,12 @@ const Concepts = () => {
         }}
       >
         <ConceptWrapper
-          contentDescription=""
+          dialogContent={{ title: "Framework", body: frameworkContent }}
+          dialogImage={{
+            url: FrameworkButtonLogo,
+            title: "Framework",
+            width: 300,
+          }}
           thumbnail={{
             url: FrameworkButtonLogo,
             title: "Framework",
@@ -30,7 +38,7 @@ const Concepts = () => {
           }}
         />
         <ConceptWrapper
-          contentDescription=""
+          dialogContent={{ title: "", body: "" }}
           thumbnail={{
             url: FrameworkButtonLogo,
             title: "Framework",

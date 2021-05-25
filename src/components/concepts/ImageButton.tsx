@@ -30,6 +30,7 @@ const ImageSrc = styled("span")({
   bottom: 0,
   backgroundSize: "cover",
   backgroundPosition: "center 40%",
+  borderRadius: "0.75rem",
 });
 
 const Image = styled("span")(({ theme }) => ({
@@ -53,6 +54,7 @@ const ImageBackdrop = styled("span")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   opacity: 0,
   transition: theme.transitions.create("opacity"),
+  borderRadius: "1rem",
 }));
 
 interface Props {
