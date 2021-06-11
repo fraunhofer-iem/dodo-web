@@ -46,7 +46,7 @@ const titleElement = {
   href: "title",
 };
 
-const getHrefFromId = (id: string) => "#" + id;
+const getHrefFromId = (id: string) => "/home#" + id;
 
 const navElements = [
   { text: "About", href: getHrefFromId(aboutId) },
